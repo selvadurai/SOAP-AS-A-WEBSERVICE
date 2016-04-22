@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://webservice/" xmlns:tns="http://webservice/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Customer" type="tns:customer"/>
+
+  <xs:element name="Employee" type="tns:employee"/>
+
+  <xs:element name="OrderFact" type="tns:orderFact"/>
+
+  <xs:element name="Product" type="tns:product"/>
+
+  <xs:element name="SalesOrderFact" type="tns:salesOrderFact"/>
+
+  <xs:element name="Supplier" type="tns:supplier"/>
+
+  <xs:element name="Time" type="tns:time"/>
+
+  <xs:element name="createCustomer" type="tns:createCustomer"/>
+
+  <xs:element name="createCustomerResponse" type="tns:createCustomerResponse"/>
+
+  <xs:element name="createEmployee" type="tns:createEmployee"/>
+
+  <xs:element name="createEmployeeResponse" type="tns:createEmployeeResponse"/>
+
+  <xs:element name="createOrderFact" type="tns:createOrderFact"/>
+
+  <xs:element name="createOrderFactResponse" type="tns:createOrderFactResponse"/>
+
+  <xs:element name="createProduct" type="tns:createProduct"/>
+
+  <xs:element name="createProductResponse" type="tns:createProductResponse"/>
+
+  <xs:element name="createSupplier" type="tns:createSupplier"/>
+
+  <xs:element name="createSupplierResponse" type="tns:createSupplierResponse"/>
+
+  <xs:element name="createTime" type="tns:createTime"/>
+
+  <xs:element name="createTimeResponse" type="tns:createTimeResponse"/>
+
+  <xs:element name="getSalesFact" type="tns:getSalesFact"/>
+
+  <xs:element name="getSalesFactResponse" type="tns:getSalesFactResponse"/>
+
+  <xs:element name="id_validiation" type="tns:id_validiation"/>
+
+  <xs:element name="id_validiationResponse" type="tns:id_validiationResponse"/>
+
+  <xs:complexType name="createCustomer">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg2" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg3" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createCustomerResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="createOrderFact">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element name="arg1" type="xs:int"/>
+      <xs:element name="arg2" type="xs:int"/>
+      <xs:element name="arg3" type="xs:int"/>
+      <xs:element name="arg4" type="xs:int"/>
+      <xs:element name="arg5" type="xs:int"/>
+      <xs:element name="arg6" type="xs:double"/>
+      <xs:element name="arg7" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createOrderFactResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="createSupplier">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg2" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createSupplierResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="createTime">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element name="arg1" type="xs:int"/>
+      <xs:element name="arg2" type="xs:int"/>
+      <xs:element name="arg3" type="xs:int"/>
+      <xs:element name="arg4" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg5" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createTimeResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="id_validiation">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="id_validiationResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createEmployee">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg2" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createEmployeeResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getSalesFact">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getSalesFactResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:salesOrderFact" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="salesOrderFact">
+    <xs:sequence>
+      <xs:element ref="tns:Customer" minOccurs="0"/>
+      <xs:element ref="tns:Employee" minOccurs="0"/>
+      <xs:element ref="tns:OrderFact" minOccurs="0"/>
+      <xs:element ref="tns:Product" minOccurs="0"/>
+      <xs:element ref="tns:Supplier" minOccurs="0"/>
+      <xs:element ref="tns:Time" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="customer">
+    <xs:sequence>
+      <xs:element name="city" type="xs:string" minOccurs="0"/>
+      <xs:element name="CompanyName" type="xs:string" minOccurs="0"/>
+      <xs:element name="Country" type="xs:string" minOccurs="0"/>
+      <xs:element name="customerID" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="employee">
+    <xs:sequence>
+      <xs:element name="EmployeeLastName" type="xs:string" minOccurs="0"/>
+      <xs:element name="EmployeeID" type="xs:int"/>
+      <xs:element name="ManagerLastName" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="orderFact">
+    <xs:sequence>
+      <xs:element name="CustomerID" type="xs:int"/>
+      <xs:element name="EmployeeID" type="xs:int"/>
+      <xs:element name="price" type="xs:double"/>
+      <xs:element name="productID" type="xs:int"/>
+      <xs:element name="quanity" type="xs:int"/>
+      <xs:element name="SalesID" type="xs:int"/>
+      <xs:element name="SupplierId" type="xs:int"/>
+      <xs:element name="timeId" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="product">
+    <xs:sequence>
+      <xs:element name="ProductCategory" type="xs:string" minOccurs="0"/>
+      <xs:element name="ProductID" type="xs:int"/>
+      <xs:element name="ProductName" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="supplier">
+    <xs:sequence>
+      <xs:element name="companyName" type="xs:string" minOccurs="0"/>
+      <xs:element name="country" type="xs:string" minOccurs="0"/>
+      <xs:element name="supplierID" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="time">
+    <xs:sequence>
+      <xs:element name="Date" type="xs:int"/>
+      <xs:element name="Day" type="xs:int"/>
+      <xs:element name="Month" type="xs:int"/>
+      <xs:element name="Quater" type="xs:string" minOccurs="0"/>
+      <xs:element name="timeID" type="xs:int"/>
+      <xs:element name="Year" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createProduct">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg2" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createProductResponse">
+    <xs:sequence/>
+  </xs:complexType>
+</xs:schema>
+
